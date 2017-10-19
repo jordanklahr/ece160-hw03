@@ -9,7 +9,7 @@ typedef enum {
 typedef struct {
   char *first_name;
   char *last_name;
-  char *major;
+  char *major_school;
   char *year;
 } Student;
 
@@ -19,7 +19,7 @@ void print_student(Mode m, Student s) {
       printf("%s %s\n", s.first_name, s.last_name);
       break;
 	 case MAJOR_AND_NAME:
-      printf("%s %s %s\n", s.major, s.first_name, s.last_name);
+      printf("%s %s %s\n", s.major_school, s.first_name, s.last_name);
       break;
 	 case YEAR_AND_NAME:
       printf("%s %s %s\n", s.year, s.first_name, s.last_name);
@@ -42,7 +42,7 @@ void main(int argc, char **argv) {
 	while(i < argc ){
 		s[j].first_name = argv[i];
 		s[j].last_name = argv[i+1];
-		s[j].major = argv[i+2];
+		s[j].major_school = argv[i+2];
 		s[j].year = argv[i+3];
 		i= i +4;
 		print_student(m,s[j]);
